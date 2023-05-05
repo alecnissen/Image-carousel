@@ -1,0 +1,16 @@
+#img1-throw { 
+    height: 430px; 
+    width: 430px; 
+}  
+
+.container-for-img-circles { 
+    display: flex;
+    gap: 0.5em;
+}
+
+.img-circles { 
+    background-color: black;
+    border-radius: 1em;
+    height: 1em; 
+    width: 1em; 
+}
