@@ -1,3 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Image-Slider</title>
+</head>
+<body>
+    <div class="container"> 
+        <div class="slider"> 
+            <div class="slider__slides"> 
+                <div class="slider__slide active"></div>
+                <div class="slider__slide"></div>
+                <div class="slider__slide"></div>
+                <div class="slider__slide"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,25 +61,24 @@
 <body>
     <div id="image-container-frame"> 
         <div id="image-slide"> 
-            <img src="images/image1.jpg" id="img1-throw"> 
-            <img src="images/image2.jpg" id="img2-throw">
-            <img src="images/image3.jpg" id="img3-pin">
-            <img src="images/image4.jpg" id="img4-gripping"> 
-            <img src="images/image5.jpg" id =img5-armbar> 
+            <img src="images/image1.jpg" id="img1-throw" class="current"> 
+            <img src="images/image2.jpg" id="img2-throw" class="current">
+            <img src="images/image3.jpg" id="img3-pin" class="current">
+            <img src="images/image4.jpg" id="img4-gripping" class="current"> 
+            <img src="images/image5.jpg" id="img5-armbar" class="current"> 
         </div>
     </div> 
 
     <div class="container-btns-to-advance-slide"> 
-    <img src="icons/circle-arrow-left-svgrepo-com.svg">
-    <img src="icons/circle-arrow-right-svgrepo-com.svg"> 
+    <img src="icons/circle-arrow-left-svgrepo-com.svg" id="prevSlide">
+    <img src="icons/circle-arrow-right-svgrepo-com.svg" id="nextSlide"> 
     </div> 
-
     <div class="container-for-img-circles"> 
-    <div class="img-circles" id="img-circle-1"></div>
-    <div class="img-circles" id="img-circle-1"></div>
-    <div class="img-circles" id="img-circle-1"></div>
-    <div class="img-circles" id="img-circle-1"></div>
-    <div class="img-circles" id="img-circle-1"></div>
+    <div class="img-circles" id="img-circle-1" data-index="1"></div>
+    <div class="img-circles" id="img-circle-2" data-index="2"></div>
+    <div class="img-circles" id="img-circle-3"></div>
+    <div class="img-circles" id="img-circle-4"></div>
+    <div class="img-circles" id="img-circle-5"></div>
 </div> 
 
 <script src="main.js"> 
