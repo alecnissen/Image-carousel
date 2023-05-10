@@ -58,7 +58,9 @@
     --before-position: absolute;
 }
 
-
+.some-class { 
+    position: absolute;
+}
 
 
  * { 
@@ -69,7 +71,7 @@
 } 
 
 .current { 
-    position: var(--before-position); 
+    position: var(--current-position); 
     top: 30%;
     left: 30%;
 } 
@@ -95,6 +97,10 @@
     display: flex;
     /* width: auto; 
     height: auto;  */
+} 
+
+#image-slide > img { 
+    border: 7px solid black;
 }
 
 .container-btns-to-advance-slide { 

@@ -1,5 +1,5 @@
 
-// event listeners for buttons, 
+// // event listeners for buttons, 
 
 let advanceSlide = document.getElementById('nextSlide'); 
 
@@ -11,36 +11,37 @@ let currentImg = document.getElementsByClassName("current");
 
 let currentImgArr = Array.from(currentImg);  
 
-// let img = document.getElementById("img5-armbar"); 
+ console.log(currentImgArr); 
 
-// let currentImgArr = Array.from(currentImg);
+ function changeImage(img) { 
+    imgSlider.append(img);
+ }
 
-console.log(currentImgArr);
-
-// console.log(advanceSlide);
 
 advanceSlide.addEventListener("click", () => { 
-    console.log("you clicked the adv slide btn");
+    console.log("you clicked the adv slide btn"); 
 
+    // let imgArr = [];
 
+    // for (let i = 0; i < currentImgArr.length; i++) { 
+    //     let current = currentImgArr[i]; 
 
-}) 
+    //     current.classList.add('some-class'); 
 
+    //     console.log(current); 
 
-// How about you try to make a function in which you can change which image is visible, 
+    //     imgArr.push(current); 
+        
+    //     imgSlider.append(current);
 
-// rather than just the last one? 
+    //     console.log(imgArr);
+    
+    //  }
+ }) 
 
 prevSlide.addEventListener("click", () => { 
     console.log("you clicked the prev slide btn");
 
-    // for (let i = 0; i < currentImgArr.length; i++) { 
-    //     let img = currentImgArr[i]; 
-
-    //     console.log(img);
-    // } 
-    
-    // changeImg();
 
 }) 
 
@@ -53,49 +54,181 @@ let circleThree = document.getElementById("img-circle-3");
 
 let circleFour = document.getElementById("img-circle-4"); 
 
-let circleFive = document.getElementById("img-circle-5"); 
+let circleFive = document.getElementById("img-circle-5");  
 
-let img1 = document.getElementById("img1-throw"); 
-
-let img2 = document.getElementById("img2-throw"); 
-
-let img3 = document.getElementById("img3-pin"); 
-
-let img4 = document.getElementById("img4-gripping");
-
-let img5 = document.getElementById("img5-armbar");
-
-circleOne.addEventListener("click", () => { 
+circleOne.addEventListener("click", (e) => { 
     console.log("circle one"); 
 
-    imgSlider.append(img1);
+    let img1 = document.getElementById("img1-throw"); 
+
+    changeImage(img1);
+
+    console.log(img1);
 
 })
 
-circleTwo.addEventListener("click", () => { 
+circleTwo.addEventListener("click", (e) => { 
     console.log("circle two");
 
-    imgSlider.append(img2);
+    let img2 = document.getElementById("img2-throw"); 
+
+    changeImage(img2);
+
+    console.log(e.target);
 }) 
 
 circleThree.addEventListener("click", () => { 
     console.log("circle three"); 
 
-    imgSlider.append(img3);
+    let img3 = document.getElementById("img3-pin"); 
+
+    changeImage(img3);
 }) 
 
 
 circleFour.addEventListener("click", () => {
     console.log("circle four"); 
 
-    imgSlider.append(img4);
+    let img4 = document.getElementById("img4-gripping");
+
+    changeImage(img4);
 }) 
 
 circleFive.addEventListener("click", () => {
     console.log("circle five");
 
-    imgSlider.append(img5);
-})
+    let img5 = document.getElementById("img5-armbar"); 
+
+    changeImage(img5);
+})  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// gpt response 5/10/23 
+
+// let advanceSlide = document.getElementById('nextSlide');
+// let prevSlide = document.getElementById('prevSlide');
+// let imgSlider = document.getElementById('image-slide');
+// let currentImg = document.getElementsByClassName("current");
+// let currentImgArr = Array.from(currentImg);
+// let currentIndex = 0;
+
+// advanceSlide.addEventListener("click", () => {
+//   currentIndex = (currentIndex + 1) % currentImgArr.length;
+//   changeImage(currentImgArr[currentIndex]);
+// });
+
+// prevSlide.addEventListener("click", () => {
+//   currentIndex = (currentIndex - 1 + currentImgArr.length) % currentImgArr.length;
+//   changeImage(currentImgArr[currentIndex]);
+// });
+
+// function changeImage(img) {
+//   imgSlider.innerHTML = '';
+//   imgSlider.appendChild(img);
+// }
+
+
+
+
+
+
+
+
+
+
+// I have the logic down, to where the circles will correspond to a certain img 
+
+// how can I get the arrow buttons working, so they advance to the next slide 
+
+// gameplan, 
+
+// event listeners wil be needed, 
+
+// change which picture is displayed in the frame, move the container? 
+
+// I don't think I Need any transitions or animations, 
+
+// similar to the logic as before with the circles, 
+
+// button is pressed, the next img in the order will be set, 
+
+// move the image slider? how? 
+
+// change it's position? but how do I change the position? 
+
+// why cant I apply the same logic as the cirles? 
+
+// btn is clicked, display the next img in line? how? 
+
+// move the image frame? the container that the imgs are in? 
+
+// build a function which can advance to the next picture, 
+
+// can you use a loop, and take in the img after the current and just append that? 
+
+// current picture variable, incremenet if the btn is pressed? 
+
+// I'm not sure how to set a current picture variable, 
+
+// you just grab the imgs and then append them to slider if that circle is clicked, 
+
+// how can I advance to the next slide based on btn click? 
+
+// some kind of function, that has the img slider/frame within it, 
+
+// and if clicked, it will advance to what is next, 
+
+// add imgs to some type of array? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
