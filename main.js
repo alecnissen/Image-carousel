@@ -11,7 +11,29 @@ let currentImg = document.getElementsByClassName("current");
 
 let currentImgArr = Array.from(currentImg);  
 
- console.log(currentImgArr); 
+// let currentImgIndex = Array.from(imgSlider.querySelectorAll("img")); 
+
+let currentPosition 
+
+let currentImgIndex
+
+let currentSelectedImg 
+
+// let currentImg 
+
+// current Project variable, something to keep track of the current Project 
+
+// pass something into the change img function, 
+
+// pass something about it's index, 
+
+// what would we pass to it, 
+
+// btn is clicked, currentPosition is incremented, 
+
+// you get the currentProject, and pass it to changeImg 
+
+console.log(imgSlider);
 
  function changeImage(img) { 
     imgSlider.append(img);
@@ -21,26 +43,25 @@ let currentImgArr = Array.from(currentImg);
 advanceSlide.addEventListener("click", () => { 
     console.log("you clicked the adv slide btn"); 
 
-    // let imgArr = [];
+    currentPosition++ 
 
-    // for (let i = 0; i < currentImgArr.length; i++) { 
-    //     let current = currentImgArr[i]; 
+    console.log(currentPosition); 
 
-    //     current.classList.add('some-class'); 
+    currentImgIndex = Array.from(imgSlider.querySelectorAll("img")); 
 
-    //     console.log(current); 
+    changeImage(currentImgIndex[0]);
 
-    //     imgArr.push(current); 
-        
-    //     imgSlider.append(current);
+    console.log(currentImgIndex)
 
-    //     console.log(imgArr);
     
-    //  }
  }) 
 
 prevSlide.addEventListener("click", () => { 
-    console.log("you clicked the prev slide btn");
+    console.log("you clicked the prev slide btn"); 
+
+     currentImgIndex = Array.from(imgSlider.querySelectorAll("img"));
+
+    changeImage(currentImgIndex[-1]);
 
 
 }) 
@@ -61,9 +82,13 @@ circleOne.addEventListener("click", (e) => {
 
     let img1 = document.getElementById("img1-throw"); 
 
-    changeImage(img1);
+    changeImage(img1); 
 
-    console.log(img1);
+    // currentSelectedImg = img1
+
+    // currentPosition = img1
+
+    console.log(img1); 
 
 })
 
@@ -72,7 +97,10 @@ circleTwo.addEventListener("click", (e) => {
 
     let img2 = document.getElementById("img2-throw"); 
 
-    changeImage(img2);
+    changeImage(img2); 
+
+    // currentSelectedImg = img2; 
+    // currentPosition = img2;
 
     console.log(e.target);
 }) 
@@ -82,7 +110,11 @@ circleThree.addEventListener("click", () => {
 
     let img3 = document.getElementById("img3-pin"); 
 
-    changeImage(img3);
+    changeImage(img3); 
+
+    // currentPosition = img3;
+
+    // currentSelectedImg = img3;
 }) 
 
 
@@ -91,7 +123,11 @@ circleFour.addEventListener("click", () => {
 
     let img4 = document.getElementById("img4-gripping");
 
-    changeImage(img4);
+    changeImage(img4); 
+
+    // currentPosition = img4;
+
+    // currentSelectedImg = img4;
 }) 
 
 circleFive.addEventListener("click", () => {
@@ -100,6 +136,10 @@ circleFive.addEventListener("click", () => {
     let img5 = document.getElementById("img5-armbar"); 
 
     changeImage(img5);
+
+    // currentPosition = img5;
+
+    // currentSelectedImg = img5;
 })  
 
 
