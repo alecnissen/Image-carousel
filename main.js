@@ -9,50 +9,28 @@ let imgSlider = document.getElementById('image-slide');
 
 let currentImg = document.getElementsByClassName("current");
 
-let currentImgArr = Array.from(currentImg);  
+let currentImgArr = Array.from(currentImg);
 
 // let currentImgIndex = Array.from(imgSlider.querySelectorAll("img")); 
 
-let currentPosition 
-
 let currentImgIndex
-
-let currentSelectedImg 
-
-// let currentImg 
-
-// current Project variable, something to keep track of the current Project 
-
-// pass something into the change img function, 
-
-// pass something about it's index, 
-
-// what would we pass to it, 
-
-// btn is clicked, currentPosition is incremented, 
-
-// you get the currentProject, and pass it to changeImg 
 
 console.log(imgSlider);
 
  function changeImage(img) { 
     imgSlider.append(img);
- }
-
+ } 
 
 advanceSlide.addEventListener("click", () => { 
     console.log("you clicked the adv slide btn"); 
 
-    currentPosition++ 
-
-    console.log(currentPosition); 
-
     currentImgIndex = Array.from(imgSlider.querySelectorAll("img")); 
+
+    // what do I pass to changeImage? 
 
     changeImage(currentImgIndex[0]);
 
     console.log(currentImgIndex)
-
     
  }) 
 
@@ -61,7 +39,7 @@ prevSlide.addEventListener("click", () => {
 
      currentImgIndex = Array.from(imgSlider.querySelectorAll("img"));
 
-    changeImage(currentImgIndex[-1]);
+    changeImage(currentImgIndex);
 
 
 }) 
@@ -84,9 +62,7 @@ circleOne.addEventListener("click", (e) => {
 
     changeImage(img1); 
 
-    // currentSelectedImg = img1
-
-    // currentPosition = img1
+    currentSelectedImg = img1
 
     console.log(img1); 
 
@@ -99,8 +75,7 @@ circleTwo.addEventListener("click", (e) => {
 
     changeImage(img2); 
 
-    // currentSelectedImg = img2; 
-    // currentPosition = img2;
+    currentSelectedImg = img2; 
 
     console.log(e.target);
 }) 
@@ -112,9 +87,7 @@ circleThree.addEventListener("click", () => {
 
     changeImage(img3); 
 
-    // currentPosition = img3;
-
-    // currentSelectedImg = img3;
+     currentSelectedImg = img3;
 }) 
 
 
@@ -125,9 +98,7 @@ circleFour.addEventListener("click", () => {
 
     changeImage(img4); 
 
-    // currentPosition = img4;
-
-    // currentSelectedImg = img4;
+    currentSelectedImg = img4;
 }) 
 
 circleFive.addEventListener("click", () => {
@@ -137,9 +108,7 @@ circleFive.addEventListener("click", () => {
 
     changeImage(img5);
 
-    // currentPosition = img5;
-
-    // currentSelectedImg = img5;
+    currentSelectedImg = img5;
 })  
 
 
