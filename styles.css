@@ -56,11 +56,7 @@
 :root { 
     --current-position: absolute; 
     --before-position: absolute;
-}
-
-.some-class { 
-    position: absolute;
-}
+} 
 
 
  * { 
@@ -71,10 +67,11 @@
 } 
 
 .current { 
-    position: var(--current-position); 
-    top: 30%;
-    left: 30%;
+    position: absolute; 
+    /* top: 30%;
+    left: 30%; */
 } 
+
 
 .container-for-img-circles { 
     display: flex;

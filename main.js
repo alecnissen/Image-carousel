@@ -7,39 +7,46 @@ let prevSlide = document.getElementById('prevSlide');
 
 let imgSlider = document.getElementById('image-slide');
 
-let currentImg = document.getElementsByClassName("current");
+// let currentImg = document.getElementsByClassName("current");
 
-let currentImgArr = Array.from(currentImg);
-
-// let currentImgIndex = Array.from(imgSlider.querySelectorAll("img")); 
+let images = [...imgSlider.querySelectorAll("img")];
 
 let currentImgIndex
 
 console.log(imgSlider);
 
- function changeImage(img) { 
-    imgSlider.append(img);
- } 
+//  function changeImage(img) { 
+//     imgSlider.append(img);
+//  } 
+
+function changeImage(img) { 
+    images.forEach(image => image.classList.remove("current"));
+    image.classList.add("current");
+} 
 
 advanceSlide.addEventListener("click", () => { 
-    console.log("you clicked the adv slide btn"); 
 
-    currentImgIndex = Array.from(imgSlider.querySelectorAll("img")); 
+    currentImgIndex += 1; 
+    // currentImgIndex = Array.from(imgSlider.querySelectorAll("img")); 
+    changeImage(images[1]);
 
-    // what do I pass to changeImage? 
+ }); 
 
-    changeImage(currentImgIndex[0]);
+ // currentImgIndex is a counter, keeps track of index, 
 
-    console.log(currentImgIndex)
-    
- }) 
+//  function advanceSlideEveryFive() { 
+//     changeImage(currentImgIndex[0]);
+//  } setInterval(5000);
+
+//  advanceSlideEveryFive();
 
 prevSlide.addEventListener("click", () => { 
-    console.log("you clicked the prev slide btn"); 
 
-     currentImgIndex = Array.from(imgSlider.querySelectorAll("img"));
+    currentImgIndex-- 
 
-    changeImage(currentImgIndex);
+    //  currentImgIndex = Array.from(imgSlider.querySelectorAll("img"));
+
+    // changeImage(currentImgIndex);
 
 
 }) 
@@ -113,9 +120,36 @@ circleFive.addEventListener("click", () => {
 
 
 
+// gameplan, 
+
+// try to get the slides advancing forward, 
+
+// if slides advance forward make sure the arrow btns are working as well 
+
+// like advance slides forward then use navigation btns, 
+
+// it should still all go in the same order, 
+
+// then once that is fixed the previous btn logic, 
+
+// advancing slides forward, 
+
+// you are currently passing the currently selected project variable, 
+
+// and it's 0 index, 
+
+//  currentImgIndex = Array.from(imgSlider.querySelectorAll("img"));  
+
+// that grabs all the images within the img frame 
+
+// changeImage(currentImgIndex[0]);
+
+// you pass an image the first image in the array 
 
 
+// show a different picture in a container 
 
+// 
 
 
 
