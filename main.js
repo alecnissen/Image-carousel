@@ -11,45 +11,35 @@ let imgSlider = document.getElementById('image-slide');
 
 let images = [...imgSlider.querySelectorAll("img")];
 
-let currentImgIndex
-
-console.log(imgSlider);
-
-//  function changeImage(img) { 
-//     imgSlider.append(img);
-//  } 
+let currentImgIndex = 0;
 
 function changeImage(img) { 
     images.forEach(image => image.classList.remove("current"));
-    image.classList.add("current");
+    img.classList.add("current");
 } 
 
 advanceSlide.addEventListener("click", () => { 
 
     currentImgIndex += 1; 
-    // currentImgIndex = Array.from(imgSlider.querySelectorAll("img")); 
-    changeImage(images[1]);
+
+    if (currentImgIndex > images.length - 1) { 
+        currentImgIndex = 0;
+    }
+    changeImage(images[currentImgIndex]);
 
  }); 
 
- // currentImgIndex is a counter, keeps track of index, 
-
-//  function advanceSlideEveryFive() { 
-//     changeImage(currentImgIndex[0]);
-//  } setInterval(5000);
-
-//  advanceSlideEveryFive();
-
 prevSlide.addEventListener("click", () => { 
 
-    currentImgIndex-- 
+    currentImgIndex -= 1; 
 
-    //  currentImgIndex = Array.from(imgSlider.querySelectorAll("img"));
+    if (currentImgIndex < 0) { 
+        currentImgIndex = images.length - 1;
+    }
+    changeImage(images[currentImgIndex]);
+});
 
-    // changeImage(currentImgIndex);
 
-
-}) 
 
 
 let circleOne = document.getElementById("img-circle-1"); 
@@ -82,9 +72,6 @@ circleTwo.addEventListener("click", (e) => {
 
     changeImage(img2); 
 
-    currentSelectedImg = img2; 
-
-    console.log(e.target);
 }) 
 
 circleThree.addEventListener("click", () => { 
@@ -94,7 +81,6 @@ circleThree.addEventListener("click", () => {
 
     changeImage(img3); 
 
-     currentSelectedImg = img3;
 }) 
 
 
@@ -104,8 +90,6 @@ circleFour.addEventListener("click", () => {
     let img4 = document.getElementById("img4-gripping");
 
     changeImage(img4); 
-
-    currentSelectedImg = img4;
 }) 
 
 circleFive.addEventListener("click", () => {
@@ -115,7 +99,6 @@ circleFive.addEventListener("click", () => {
 
     changeImage(img5);
 
-    currentSelectedImg = img5;
 })  
 
 
@@ -153,6 +136,58 @@ circleFive.addEventListener("click", () => {
 
 
 
+// // DOM references: next and prev, image container, current image's index,
+// //  array of images, and array of image buttons.
+// let advanceSlide = document.getElementById('nextSlide'); 
+// let prevSlide = document.getElementById('prevSlide');
+// let imgSlider = document.getElementById('image-slide');
+// let currentImgIndex=0;
+// let images = [...imgSlider.querySelectorAll("img")];
+// let buttons = [...document.querySelectorAll(".container-for-img-circles .img-circles")]
+
+// // Utility function. This will be called by next, prev and each of the button
+// //  handlers
+// function changeImage(img) {
+//   const imageIndex = images.indexOf(img);
+//    images.forEach((image, index) => {
+//      if(image !== img){
+//        image.classList.remove("current");     
+//      } else {
+//        image.classList.add("current")   
+//      }
+//      image.style.left = `${((index-imageIndex)*30)+30}%`
+//    })
+// } 
+
+// // Next button handler. All we're doing is incrementing the index, and then
+// //  setting it back to zero if we reach the last one.
+// // And then we tell changeImage to do its thing.
+// function next(){
+//   currentImgIndex = (currentImgIndex+1)%images.length;
+//   changeImage(images[currentImgIndex]);
+// }
+
+// // prev button handler. All we're doing is decrementing the index, and then
+// //  setting it to the last one if we reach zero.
+// // And then we tell changeImage to do its thing.
+// function prev(){
+//   currentImgIndex = currentImgIndex === 0 ? images.length-1 : currentImgIndex - 1;
+//   changeImage(images[currentImgIndex]);
+// }
+
+// // Each button has an index - and they're the same index as the image in the images
+// //  array. So with that, we can set `currentImgIndex` directly to that, and call
+// //  changeImage with the current image.
+// buttons.forEach((button, index)=>{
+//   button.addEventListener("click", (e)=>{
+//     currentImgIndex = index;
+//     changeImage(images[currentImgIndex])
+//   })
+// })
+
+// // Hook up the listeners for prev and next
+// advanceSlide.addEventListener("click", next);
+// prevSlide.addEventListener("click", prev);
 
 
 

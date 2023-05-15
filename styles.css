@@ -53,13 +53,13 @@
 
 
 
-:root { 
+ :root { 
     --current-position: absolute; 
     --before-position: absolute;
-} 
+}  
 
 
- * { 
+  * { 
     background-color: blue;
     padding: 0; 
     box-sizing: border-box;
@@ -69,11 +69,18 @@
 .current { 
     position: absolute; 
     /* top: 30%;
-    left: 30%; */
+    left: 30%; */ 
 } 
+ /* #image-slide > img { 
+    position: absolute;
+    top: 5px;
+    width: 80px;
+    height: 80px;
+    transition: left .5s, width .25s, height .25s;
+  }  */
 
 
-.container-for-img-circles { 
+ .container-for-img-circles { 
     display: flex;
     gap: 0.5em;
 }
@@ -87,10 +94,10 @@
 
 #image-container-frame { 
     width: 60%; 
-    /* margin: auto;  */
+    margin: auto;  
 }
 
-#image-slide { 
+ #image-slide { 
     display: flex;
     /* width: auto; 
     height: auto;  */
@@ -110,9 +117,96 @@
     display: flex;
     justify-content: center; 
     margin-top: 1em;
-} 
+}  
 
-/* #image-slide { 
+#image-slide { 
     position: relative;
     right: 60em; 
-} */ 
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* * { 
+    background-color: blue;
+    padding: 0; 
+    box-sizing: border-box;
+    margin: 0;
+} 
+
+.container-for-img-circles { 
+    display: flex;
+    gap: 0.5em;
+}
+
+.img-circles { 
+    background-color: white;
+    border-radius: 1em;
+    height: 1em; 
+    width: 1em; 
+} 
+
+#image-container-frame { 
+    width: 60%; 
+    /* margin: auto;  */
+/* 
+#image-slide { 
+  height: 100px;
+    display: flex;
+    /* width: auto; 
+    height: auto;  */
+
+
+/* #image-slide > img { 
+  position: absolute;
+  top: 5px;
+  width: 45px;
+  height: 45px;
+  border: 7px solid black;
+  transition: left .5s, width .25s, height .25s;
+} */
+
+/* #image-slide img.current { 
+    position: var(--current-position); 
+    left: 30%;
+  border: 1px solid aliceblue;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+} 
+
+.container-btns-to-advance-slide { 
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+}  */
+
+/* .container-for-img-circles { 
+    display: flex;
+    justify-content: center; 
+    margin-top: 1em;
+}  */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
