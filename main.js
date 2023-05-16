@@ -69,12 +69,15 @@ circleOne.addEventListener("click", (e) => {
 
     let img1 = document.getElementById("img1-throw"); 
 
-    changeImage(img1); 
+    changeImage(img1);
 
+    currentImgIndex = 0;
     // img1.classList.add("img-circles:active");
     clearInterval(intervalID); 
 
-    autoAdvanceSlide()
+    autoAdvanceSlide(); 
+
+    console.log(currentImgIndex);
 
 })
 
@@ -83,11 +86,16 @@ circleTwo.addEventListener("click", (e) => {
 
     let img2 = document.getElementById("img2-throw"); 
 
-    changeImage(img2); 
+    changeImage(img2);
+
+    currentImgIndex = 1;
 
     clearInterval(intervalID); 
 
-    autoAdvanceSlide()
+    autoAdvanceSlide();
+
+    
+    console.log(currentImgIndex);
 
 
 }) 
@@ -99,9 +107,14 @@ circleThree.addEventListener("click", () => {
 
     changeImage(img3); 
 
+    currentImgIndex = 2;
+
     clearInterval(intervalID); 
 
-    autoAdvanceSlide();
+    autoAdvanceSlide(); 
+
+
+    console.log(currentImgIndex);
 
     // clickedCircle = true;
 
@@ -115,9 +128,14 @@ circleFour.addEventListener("click", () => {
 
     changeImage(img4); 
 
+    currentImgIndex = 3;
+
     clearInterval(intervalID); 
 
-    autoAdvanceSlide();
+    autoAdvanceSlide(); 
+
+
+    console.log(currentImgIndex);
 
     // clickedCircle = true;
 }) 
@@ -129,9 +147,14 @@ circleFive.addEventListener("click", () => {
 
     changeImage(img5); 
 
+    currentImgIndex = 4;
+
     clearInterval(intervalID);
 
-    autoAdvanceSlide();
+    autoAdvanceSlide();  
+
+
+    console.log(currentImgIndex);
 
     // clickedCircle = true;
 
