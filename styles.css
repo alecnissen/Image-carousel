@@ -85,7 +85,19 @@
     border-radius: 1em;
     height: 1em; 
     width: 1em; 
-} 
+    transition: background-color 0.3s ease;
+}  
+
+.img-circles.active {
+    background-color: red; /* Set the desired color for the active circle */
+  }
+
+/* .img-circles:active { 
+    background-color: black;
+    border-radius: 1em;
+    height: 1em; 
+    width: 1em; 
+} */
 
 /* #image-container-frame { 
     width: 60%; 

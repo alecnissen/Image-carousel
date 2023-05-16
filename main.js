@@ -11,7 +11,9 @@ let imgSlider = document.getElementById('image-slide');
 
 let images = [...imgSlider.querySelectorAll("img")];
 
-let currentImgIndex = 0;
+let currentImgIndex = 0; 
+
+// let clickedCircle = false;
 
 function changeImage(img) { 
     images.forEach(image => image.classList.remove("current"));
@@ -59,9 +61,12 @@ circleOne.addEventListener("click", (e) => {
 
     changeImage(img1); 
 
+    // img1.classList.add("img-circles:active");
     currentSelectedImg = img1
 
     console.log(img1); 
+
+    // clickedCircle = true;
 
 })
 
@@ -72,6 +77,8 @@ circleTwo.addEventListener("click", (e) => {
 
     changeImage(img2); 
 
+    // clickedCircle = true;
+
 }) 
 
 circleThree.addEventListener("click", () => { 
@@ -80,6 +87,8 @@ circleThree.addEventListener("click", () => {
     let img3 = document.getElementById("img3-pin"); 
 
     changeImage(img3); 
+
+    // clickedCircle = true;
 
 }) 
 
@@ -90,6 +99,8 @@ circleFour.addEventListener("click", () => {
     let img4 = document.getElementById("img4-gripping");
 
     changeImage(img4); 
+
+    // clickedCircle = true;
 }) 
 
 circleFive.addEventListener("click", () => {
@@ -97,11 +108,45 @@ circleFive.addEventListener("click", () => {
 
     let img5 = document.getElementById("img5-armbar"); 
 
-    changeImage(img5);
+    changeImage(img5); 
+
+    // clickedCircle = true;
 
 })  
 
 
+function autoAdvanceSlide() { 
+    setInterval(function() { 
+
+        currentImgIndex += 1; 
+
+    if (currentImgIndex > images.length - 1) { 
+        currentImgIndex = 0;
+    }
+    changeImage(images[currentImgIndex]);
+
+
+    }, 5000);
+} 
+autoAdvanceSlide();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// I thought the logic would be exactly the same as the adv slide btn? 
+
+// pen attached, and code block 
 
 // gameplan, 
 
