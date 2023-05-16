@@ -7,6 +7,16 @@ let prevSlide = document.getElementById('prevSlide');
 
 let imgSlider = document.getElementById('image-slide');
 
+let navigationDots = [...document.getElementsByClassName("img-circles")]; 
+
+console.log(navigationDots); 
+
+let intervalID
+
+// navigationDots.classList.add("img-circles.active"); 
+
+
+
 // let currentImg = document.getElementsByClassName("current");
 
 let images = [...imgSlider.querySelectorAll("img")];
@@ -62,11 +72,9 @@ circleOne.addEventListener("click", (e) => {
     changeImage(img1); 
 
     // img1.classList.add("img-circles:active");
-    currentSelectedImg = img1
+    clearInterval(intervalID); 
 
-    console.log(img1); 
-
-    // clickedCircle = true;
+    autoAdvanceSlide()
 
 })
 
@@ -77,7 +85,10 @@ circleTwo.addEventListener("click", (e) => {
 
     changeImage(img2); 
 
-    // clickedCircle = true;
+    clearInterval(intervalID); 
+
+    autoAdvanceSlide()
+
 
 }) 
 
@@ -87,6 +98,10 @@ circleThree.addEventListener("click", () => {
     let img3 = document.getElementById("img3-pin"); 
 
     changeImage(img3); 
+
+    clearInterval(intervalID); 
+
+    autoAdvanceSlide();
 
     // clickedCircle = true;
 
@@ -100,6 +115,10 @@ circleFour.addEventListener("click", () => {
 
     changeImage(img4); 
 
+    clearInterval(intervalID); 
+
+    autoAdvanceSlide();
+
     // clickedCircle = true;
 }) 
 
@@ -110,24 +129,30 @@ circleFive.addEventListener("click", () => {
 
     changeImage(img5); 
 
+    clearInterval(intervalID);
+
+    autoAdvanceSlide();
+
     // clickedCircle = true;
 
 })  
-
+// clearInterval(intervalID); 
 
 function autoAdvanceSlide() { 
-    setInterval(function() { 
+       intervalID = setInterval(function () { 
 
         currentImgIndex += 1; 
-
-    if (currentImgIndex > images.length - 1) { 
-        currentImgIndex = 0;
-    }
-    changeImage(images[currentImgIndex]);
-
-
+        
+        if (currentImgIndex > images.length - 1) { 
+            currentImgIndex = 0;
+        }
+        changeImage(images[currentImgIndex]);
+        
+        
     }, 5000);
-} 
+}
+
+
 autoAdvanceSlide();
 
 
