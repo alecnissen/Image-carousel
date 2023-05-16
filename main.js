@@ -9,25 +9,17 @@ let imgSlider = document.getElementById('image-slide');
 
 let navigationDots = [...document.getElementsByClassName("img-circles")]; 
 
-console.log(navigationDots); 
-
-let intervalID
-
-// navigationDots.classList.add("img-circles.active"); 
-
-
-
-// let currentImg = document.getElementsByClassName("current");
+let intervalID;
 
 let images = [...imgSlider.querySelectorAll("img")];
 
-let currentImgIndex = 0; 
+let currentImgIndex = 0;
 
-// let clickedCircle = false;
-
-function changeImage(img) { 
+function changeImage(img) {
     images.forEach(image => image.classList.remove("current"));
     img.classList.add("current");
+
+    fillCircle();
 } 
 
 advanceSlide.addEventListener("click", () => { 
@@ -51,9 +43,6 @@ prevSlide.addEventListener("click", () => {
     changeImage(images[currentImgIndex]);
 });
 
-
-
-
 let circleOne = document.getElementById("img-circle-1"); 
 
 let circleTwo = document.getElementById("img-circle-2"); 
@@ -72,12 +61,12 @@ circleOne.addEventListener("click", (e) => {
     changeImage(img1);
 
     currentImgIndex = 0;
-    // img1.classList.add("img-circles:active");
+    
     clearInterval(intervalID); 
 
     autoAdvanceSlide(); 
 
-    console.log(currentImgIndex);
+    e.target.classList.add("img-circles.active");
 
 })
 
@@ -94,13 +83,11 @@ circleTwo.addEventListener("click", (e) => {
 
     autoAdvanceSlide();
 
-    
-    console.log(currentImgIndex);
-
+    e.target.classList.add("img-circles.active");
 
 }) 
 
-circleThree.addEventListener("click", () => { 
+circleThree.addEventListener("click", (e) => { 
     console.log("circle three"); 
 
     let img3 = document.getElementById("img3-pin"); 
@@ -113,15 +100,12 @@ circleThree.addEventListener("click", () => {
 
     autoAdvanceSlide(); 
 
-
-    console.log(currentImgIndex);
-
-    // clickedCircle = true;
+    e.target.classList.add("img-circles.active");
 
 }) 
 
 
-circleFour.addEventListener("click", () => {
+circleFour.addEventListener("click", (e) => {
     console.log("circle four"); 
 
     let img4 = document.getElementById("img4-gripping");
@@ -134,13 +118,10 @@ circleFour.addEventListener("click", () => {
 
     autoAdvanceSlide(); 
 
-
-    console.log(currentImgIndex);
-
-    // clickedCircle = true;
+    e.target.classList.add("img-circles.active");
 }) 
 
-circleFive.addEventListener("click", () => {
+circleFive.addEventListener("click", (e) => {
     console.log("circle five");
 
     let img5 = document.getElementById("img5-armbar"); 
@@ -151,15 +132,13 @@ circleFive.addEventListener("click", () => {
 
     clearInterval(intervalID);
 
-    autoAdvanceSlide();  
+    autoAdvanceSlide();
 
-
-    console.log(currentImgIndex);
-
-    // clickedCircle = true;
+    e.target.classList.add("img-circles.active");
 
 })  
-// clearInterval(intervalID); 
+
+
 
 function autoAdvanceSlide() { 
        intervalID = setInterval(function () { 
@@ -167,17 +146,87 @@ function autoAdvanceSlide() {
         currentImgIndex += 1; 
         
         if (currentImgIndex > images.length - 1) { 
+
             currentImgIndex = 0;
         }
         changeImage(images[currentImgIndex]);
-        
+
+        // fillCircle(currentImgIndex);
         
     }, 5000);
 }
 
-
 autoAdvanceSlide();
 
+function fillCircle() { 
+    // let currentCircleIndex = index; 
+
+    // console.log(currentCircleIndex);
+
+   for (let i = 0; i < navigationDots.length; i++) { 
+    let dot = navigationDots[i]; 
+
+    console.log(dot);
+
+    if (dot === navigationDots[0]) {
+        dot.classList.add('img-circles-current');
+    } if (dot === navigationDots[1]) { 
+        dot.classList.add('img-circles-current');
+    } if (dot === navigationDots[2]) { 
+        dot.classList.add('img-circles-current');
+    } if (dot === navigationDots[3]) { 
+        dot.classList.add('img-circles-current');
+    } if (dot === navigationDots[4]) { 
+        dot.classList.add('img-circles-current');
+    }
+
+   }
+
+}
+
+
+// currently it is filling in all dots, 
+
+// how can I change my logic, to fill in the dot 
+
+// with the correct index, 
+
+
+
+
+// hello on the last step of the image slider, 
+
+// right now I just want navigation dots to fill in with color, 
+
+// when the user is on that particular index, 
+
+// if I'm on the first slide, circle 1 should be colored in. 
+
+// I'm a little stuck 
+
+// but I made a function that loops through all the navigation dots, 
+
+
+// and applies an :active class to them, 
+
+
+
+// not inside the event listener that the class should be applied, 
+
+// but possibly within the auto advance function, 
+
+// the class should indicate where the user is in the show, 
+
+
+// fill the circles based on where you are in the slideshow, 
+
+// check out the change image function, because 
+
+// classes are already being added, and removed , 
+
+// so you would need to add a class, like circle filled, 
+
+// to the currentIndex. 
 
 
 
@@ -187,45 +236,6 @@ autoAdvanceSlide();
 
 
 
-
-
-
-
-
-// I thought the logic would be exactly the same as the adv slide btn? 
-
-// pen attached, and code block 
-
-// gameplan, 
-
-// try to get the slides advancing forward, 
-
-// if slides advance forward make sure the arrow btns are working as well 
-
-// like advance slides forward then use navigation btns, 
-
-// it should still all go in the same order, 
-
-// then once that is fixed the previous btn logic, 
-
-// advancing slides forward, 
-
-// you are currently passing the currently selected project variable, 
-
-// and it's 0 index, 
-
-//  currentImgIndex = Array.from(imgSlider.querySelectorAll("img"));  
-
-// that grabs all the images within the img frame 
-
-// changeImage(currentImgIndex[0]);
-
-// you pass an image the first image in the array 
-
-
-// show a different picture in a container 
-
-// 
 
 
 
