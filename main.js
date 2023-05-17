@@ -9,15 +9,20 @@ let imgSlider = document.getElementById('image-slide');
 
 let navigationDots = [...document.getElementsByClassName("img-circles")]; 
 
+// let navigationCircleBtns = document.getElementsByClassName("img-circles")[0];
+
 let intervalID;
 
 let images = [...imgSlider.querySelectorAll("img")];
 
 let currentImgIndex = 0;
 
+fillCircle();
+
 function changeImage(img) {
     images.forEach(image => image.classList.remove("current"));
-    img.classList.add("current");
+    img.classList.add("current"); 
+
 
     fillCircle();
 } 
@@ -58,15 +63,15 @@ circleOne.addEventListener("click", (e) => {
 
     let img1 = document.getElementById("img1-throw"); 
 
-    changeImage(img1);
-
+    
     currentImgIndex = 0;
     
     clearInterval(intervalID); 
-
+    
     autoAdvanceSlide(); 
-
-    e.target.classList.add("img-circles.active");
+    
+    changeImage(img1);
+    // e.target.classList.add("img-circles.active");
 
 })
 
@@ -75,15 +80,15 @@ circleTwo.addEventListener("click", (e) => {
 
     let img2 = document.getElementById("img2-throw"); 
 
-    changeImage(img2);
-
+    
     currentImgIndex = 1;
-
+    
     clearInterval(intervalID); 
-
+    
     autoAdvanceSlide();
-
-    e.target.classList.add("img-circles.active");
+    
+    changeImage(img2);
+    // e.target.classList.add("img-circles.active");
 
 }) 
 
@@ -92,15 +97,15 @@ circleThree.addEventListener("click", (e) => {
 
     let img3 = document.getElementById("img3-pin"); 
 
-    changeImage(img3); 
-
+    
     currentImgIndex = 2;
-
+    
     clearInterval(intervalID); 
-
+    
     autoAdvanceSlide(); 
-
-    e.target.classList.add("img-circles.active");
+    
+    changeImage(img3); 
+    // e.target.classList.add("img-circles.active");
 
 }) 
 
@@ -110,31 +115,30 @@ circleFour.addEventListener("click", (e) => {
 
     let img4 = document.getElementById("img4-gripping");
 
-    changeImage(img4); 
-
+    
     currentImgIndex = 3;
-
+    
     clearInterval(intervalID); 
-
+    
     autoAdvanceSlide(); 
-
-    e.target.classList.add("img-circles.active");
+    
+    changeImage(img4); 
+    // e.target.classList.add("img-circles.active");
 }) 
 
 circleFive.addEventListener("click", (e) => {
     console.log("circle five");
 
     let img5 = document.getElementById("img5-armbar"); 
-
-    changeImage(img5); 
-
+    
     currentImgIndex = 4;
-
+    
     clearInterval(intervalID);
-
+    
     autoAdvanceSlide();
-
-    e.target.classList.add("img-circles.active");
+    
+    changeImage(img5); 
+    // e.target.classList.add("img-circles.active");
 
 })  
 
@@ -156,31 +160,24 @@ function autoAdvanceSlide() {
     }, 5000);
 }
 
-autoAdvanceSlide();
+autoAdvanceSlide(); 
+
+
+console.log(currentImgIndex[0]);
 
 function fillCircle() { 
     // let currentCircleIndex = index; 
 
-    // console.log(currentCircleIndex);
+    // console.log(currentCircleIndex); 
 
-   for (let i = 0; i < navigationDots.length; i++) { 
-    let dot = navigationDots[i]; 
+    for (let i = 0; i < navigationDots.length; i++) { 
+        let dot = navigationDots[i];
+        
 
-    console.log(dot);
-
-    if (dot === navigationDots[0]) {
-        dot.classList.add('img-circles-current');
-    } if (dot === navigationDots[1]) { 
-        dot.classList.add('img-circles-current');
-    } if (dot === navigationDots[2]) { 
-        dot.classList.add('img-circles-current');
-    } if (dot === navigationDots[3]) { 
-        dot.classList.add('img-circles-current');
-    } if (dot === navigationDots[4]) { 
-        dot.classList.add('img-circles-current');
+        dot.classList.toggle('img-circles-current', currentImgIndex === i);
     }
 
-   }
+    // navigationDots.classList.add('img-circles-current', currentImgIndex);
 
 }
 

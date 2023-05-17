@@ -104,17 +104,16 @@
 .container-btns-to-advance-slide { 
     display: flex;
     /* justify-content: flex-start; */
-    position: relative;
-    left: 14em;
+    /* position: relative;
+    left: 14em; */
+    justify-content: center;
     gap: 3em;
 } 
 
 .container-for-img-circles { 
     display: flex;
-    /* justify-content: flex-start;  */
-    margin-top: 1em;
-    position: relative;
-    left: 16em; 
+     margin-top: 1em;
+    justify-content: center;
 }  
 
 #image-slide { 
@@ -123,6 +122,7 @@
     /* right: 0;  */
     display: flex;
     gap: 5em; 
+    justify-content: center;
 } 
 
 #image-slide > img:not(.current) {
